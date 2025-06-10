@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NullAvatar</string>
+    <string name="module_name">NullAvatar</string>
+    <string name="module_desc">NullAvatar by HdShare@github</string>
 </resources>
