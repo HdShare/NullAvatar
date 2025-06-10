@@ -8,6 +8,7 @@ import me.hd.nullavatar.hook.data.NullAvatar
 import me.hd.nullavatar.hook.hooker.AlipayHooker
 import me.hd.nullavatar.hook.hooker.DebugHooker
 import me.hd.nullavatar.hook.hooker.EleHooker
+import me.hd.nullavatar.hook.hooker.MeiTuanHooker
 
 @InjectYukiHookWithXposed(entryClassName = "Entry")
 object HookEntry : IYukiHookXposedInit {
@@ -21,5 +22,6 @@ object HookEntry : IYukiHookXposedInit {
         loadApp("me.hd.debug", DebugHooker)
         loadApp("com.eg.android.AlipayGphone", AlipayHooker)
         loadApp("me.ele", EleHooker)
+        loadApp("com.sankuai.meituan", MeiTuanHooker)
     }
 }

@@ -3,5 +3,6 @@
     <string-array name="module_scope">
         <item>com.eg.android.AlipayGphone</item>
         <item>me.ele</item>
+        <item>com.sankuai.meituan</item>
     </string-array>
 </resources>
