@@ -10,6 +10,7 @@ import me.hd.nullavatar.hook.hooker.AlipayHooker
 import me.hd.nullavatar.hook.hooker.DebugHooker
 import me.hd.nullavatar.hook.hooker.EleHooker
 import me.hd.nullavatar.hook.hooker.MeiTuanHooker
+import me.hd.nullavatar.hook.hooker.WeChatHooker
 
 @InjectYukiHookWithXposed(entryClassName = "Entry")
 object HookEntry : IYukiHookXposedInit {
@@ -25,5 +26,6 @@ object HookEntry : IYukiHookXposedInit {
         loadApp("me.ele", EleHooker)
         loadApp("com.sankuai.meituan", MeiTuanHooker)
         loadApp("com.autonavi.minimap", AMapHooker)
+        loadApp("com.tencent.mm", WeChatHooker)
     }
 }
