@@ -10,6 +10,7 @@ import me.hd.nullavatar.hook.hooker.AlipayHooker
 import me.hd.nullavatar.hook.hooker.DebugHooker
 import me.hd.nullavatar.hook.hooker.EasyBikeHooker
 import me.hd.nullavatar.hook.hooker.EleHooker
+import me.hd.nullavatar.hook.hooker.IdleFishHooker
 import me.hd.nullavatar.hook.hooker.MeiTuanHooker
 import me.hd.nullavatar.hook.hooker.WeChatHooker
 
@@ -29,5 +30,6 @@ object HookEntry : IYukiHookXposedInit {
         loadApp("com.autonavi.minimap", AMapHooker)
         loadApp("com.tencent.mm", WeChatHooker)
         loadApp("com.jingyao.easybike", EasyBikeHooker)
+        loadApp("com.taobao.idlefish", IdleFishHooker)
     }
 }
