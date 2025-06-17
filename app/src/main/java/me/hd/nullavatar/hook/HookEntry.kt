@@ -13,6 +13,7 @@ import me.hd.nullavatar.hook.hooker.EleHooker
 import me.hd.nullavatar.hook.hooker.IdleFishHooker
 import me.hd.nullavatar.hook.hooker.MeiTuanHooker
 import me.hd.nullavatar.hook.hooker.WeChatHooker
+import me.hd.nullavatar.hook.hooker.XhsHooker
 
 @InjectYukiHookWithXposed(entryClassName = "Entry")
 object HookEntry : IYukiHookXposedInit {
@@ -31,5 +32,6 @@ object HookEntry : IYukiHookXposedInit {
         loadApp("com.tencent.mm", WeChatHooker)
         loadApp("com.jingyao.easybike", EasyBikeHooker)
         loadApp("com.taobao.idlefish", IdleFishHooker)
+        loadApp("com.xingin.xhs", XhsHooker)
     }
 }
