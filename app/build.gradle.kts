@@ -12,8 +12,8 @@ android {
         applicationId = "me.hd.nullavatar"
         minSdk = 27
         targetSdk = 35
-        versionCode = 7
-        versionName = "1.6"
+        versionCode = 8
+        versionName = "1.7"
         buildConfigField("String", "APP_NAME", "\"NullAvatar\"")
     }
 
