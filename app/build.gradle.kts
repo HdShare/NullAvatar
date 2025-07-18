@@ -71,5 +71,7 @@ dependencies {
     implementation(libs.dexkit)
     compileOnly(libs.xposed.api)
     implementation(libs.yukihookapi.api)
+    implementation(libs.kavaref.core)
+    implementation(libs.kavaref.extension)
     ksp(libs.yukihookapi.ksp.xposed)
 }
