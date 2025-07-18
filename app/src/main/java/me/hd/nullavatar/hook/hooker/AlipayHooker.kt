@@ -1,9 +1,8 @@
 package me.hd.nullavatar.hook.hooker
 
 import android.content.Context
-import com.highcapable.yukihookapi.hook.type.android.BitmapClass
-import com.highcapable.yukihookapi.hook.type.java.ByteArrayType
-import com.highcapable.yukihookapi.hook.type.java.LongType
+import android.graphics.Bitmap
+import com.highcapable.kavaref.extension.classOf
 import me.hd.nullavatar.hook.base.BaseHook
 import me.hd.nullavatar.hook.util.AvatarUtil
 import org.luckypray.dexkit.DexKitBridge
@@ -16,8 +15,8 @@ object AlipayHooker : BaseHook() {
         loadCompressedByteMethod = dexkit.findMethod {
             matcher {
                 declaredClass("com.alipay.mobile.security.photo.ui.SelectPhotoActivity")
-                returnType(ByteArrayType)
-                paramTypes(BitmapClass, LongType)
+                returnType(classOf<ByteArray>())
+                paramTypes(classOf<Bitmap>(), classOf<Long>())
                 usingEqStrings(
                     "EditAvatarActivity",
                     "小图片，不压缩",

@@ -1,7 +1,7 @@
 package me.hd.nullavatar.hook.hooker
 
 import android.content.Context
-import com.highcapable.yukihookapi.hook.type.java.ByteArrayType
+import com.highcapable.kavaref.extension.classOf
 import me.hd.nullavatar.hook.base.BaseHook
 import me.hd.nullavatar.hook.util.AvatarUtil
 import org.luckypray.dexkit.DexKitBridge
@@ -13,7 +13,7 @@ object MeiTuanHooker : BaseHook() {
     override fun onDexFind(dexkit: DexKitBridge) {
         updateUserAvatarPictureMethod = dexkit.findMethod {
             matcher {
-                paramTypes(null, null, ByteArrayType)
+                paramTypes(null, null, classOf<ByteArray>())
                 usingEqStrings(
                     "NetUtils.updateUserAvatarPicture.new",
                     "user is login",

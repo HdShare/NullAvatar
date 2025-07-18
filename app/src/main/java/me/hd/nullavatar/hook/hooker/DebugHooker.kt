@@ -2,15 +2,14 @@ package me.hd.nullavatar.hook.hooker
 
 import android.content.Context
 import android.graphics.Bitmap
-import com.highcapable.yukihookapi.hook.factory.method
-import com.highcapable.yukihookapi.hook.type.android.BitmapClass
+import com.highcapable.kavaref.KavaRef.Companion.resolve
 import me.hd.nullavatar.hook.base.BaseHook
 import me.hd.nullavatar.hook.util.printStackTrace
 
 object DebugHooker : BaseHook() {
     override fun onBaseHook(ctx: Context, loader: ClassLoader) {
-        BitmapClass.apply {
-            method {
+        "android.graphics.Bitmap".toAppClass().resolve().apply {
+            firstMethod {
                 name = "compress"
             }.hook {
                 after {

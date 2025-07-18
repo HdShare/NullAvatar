@@ -1,8 +1,7 @@
 package me.hd.nullavatar.hook.hooker
 
 import android.content.Context
-import com.highcapable.yukihookapi.hook.factory.current
-import com.highcapable.yukihookapi.hook.type.java.StringClass
+import com.highcapable.kavaref.KavaRef.Companion.asResolver
 import me.hd.nullavatar.hook.base.BaseHook
 import me.hd.nullavatar.hook.util.AvatarUtil
 import org.luckypray.dexkit.DexKitBridge
@@ -26,10 +25,8 @@ object WeChatHooker : BaseHook() {
     override fun onBaseHook(ctx: Context, loader: ClassLoader) {
         getClipBitmapMethod.toAppMethod().hook {
             after {
-                result!!.current {
-                    val path = field { type = StringClass }.string()
-                    File(path).outputStream().use { AvatarUtil.getOutputStream().writeTo(it) }
-                }
+                val path = result!!.asResolver().firstField { type = String::class }.get<String>()!!
+                File(path).outputStream().use { AvatarUtil.getOutputStream().writeTo(it) }
             }
         }
     }
